@@ -1,0 +1,47 @@
+# https://artifacthub.io/packages/helm/argo/argo-cd/8.0.0?modal=values
+
+global:
+  domain: argocd.prod.ftscode.de
+# Terminate SSL at ingress and let Cilium handle it past there
+params:
+  server.insecure: true
+controller:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+server:
+  config:
+    url: https://argocd.prod.ftscode.de
+  # As HTTPS is dealt with with Cloudflared, internally use HTTP
+  extraArgs:
+    - --insecure
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+repoServer:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+applicationSet:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+redis:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+dex:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+notifications:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
