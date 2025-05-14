@@ -16,10 +16,10 @@ spec:
         valueFiles:
           - $k8s/infrastructure/cert-manager/environments/prod/values.yaml
     - repoURL: https://github.com/fkheinstein204/k8s-ha-lab
-      targetRevision: main
+      targetRevision: HEAD
       ref: k8s
     - repoURL: https://github.com/fkheinstein204/k8s-ha-lab
-      targetRevision: main
+      targetRevision: HEAD
       path: infrastructure/cert-manager/environments/prod
   destination:
     server: "https://kubernetes.default.svc"
