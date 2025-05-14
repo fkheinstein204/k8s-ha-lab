@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/fkheinstein204/k8s-ha-lab
     targetRevision: HEAD
-    path: cloudflared/environments/prod
+    path: core/cloudflared/environments/prod
   destination:
     server: https://kubernetes.default.svc
     namespace: cloudflare
